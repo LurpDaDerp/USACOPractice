@@ -4,7 +4,7 @@ Problem 2. [The Bucket List](https://usaco.org/index.php?page=viewproblem2&cpid=
 
 [Solution](https://github.com/LurpDaDerp/USACOPractice/blob/main/Practice/blist/blist.java)
 
-
+<br />
 
 USACO 2026 December Contest, Bronze
 
