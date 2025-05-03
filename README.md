@@ -1,5 +1,4 @@
 USACO 2018 December Contest, Bronze
-
 Problem 2. [The Bucket List](https://usaco.org/index.php?page=viewproblem2&cpid=856)
 
 [Solution](https://github.com/LurpDaDerp/USACOPractice/blob/main/Practice/blist/blist.java)
