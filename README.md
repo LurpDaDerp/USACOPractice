@@ -5,7 +5,7 @@ Problem 2. [The Bucket List](https://usaco.org/index.php?page=viewproblem2&cpid=
 
 <br />
 
-USACO 2026 December Contest, Bronze
+USACO 2016 December Contest, Bronze
 Problem 2. [Blocks](https://usaco.org/index.php?page=viewproblem2&cpid=664)
 
 [Solution](https://github.com/LurpDaDerp/USACOPractice/blob/main/Practice/blocks/blocks.java)
