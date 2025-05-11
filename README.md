@@ -2,6 +2,8 @@
 USACO 2017 February Contest, Bronze
 Problem 2. [Lifeguards](https://usaco.org/index.php?page=viewproblem2&cpid=784)
 
+[Solution](https://github.com/LurpDaDerp/USACOPractice/blob/main/Practice/lifeguards/lifeguards.java)
+
 <br />
 
 USACO 2018 December Contest, Bronze
