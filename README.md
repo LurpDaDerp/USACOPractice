@@ -1,3 +1,9 @@
+
+USACO 2017 February Contest, Bronze
+Problem 2. [Lifeguards](https://usaco.org/index.php?page=viewproblem2&cpid=784)
+
+<br />
+
 USACO 2018 December Contest, Bronze
 Problem 2. [The Bucket List](https://usaco.org/index.php?page=viewproblem2&cpid=856)
 
