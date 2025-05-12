@@ -1,5 +1,11 @@
-
 USACO 2017 February Contest, Bronze
+Problem 2. [Why Did the Cow Cross the Road II](https://usaco.org/index.php?page=viewproblem2&cpid=712)
+
+[Solution](https://github.com/LurpDaDerp/USACOPractice/blob/main/Practice/circlecross/circlecross.java)
+
+<br />
+
+USACO 2018 January Contest, Bronze
 Problem 2. [Lifeguards](https://usaco.org/index.php?page=viewproblem2&cpid=784)
 
 [Solution](https://github.com/LurpDaDerp/USACOPractice/blob/main/Practice/lifeguards/lifeguards.java)
