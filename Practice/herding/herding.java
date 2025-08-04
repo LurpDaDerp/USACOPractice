@@ -1,37 +1,24 @@
-/*
-ID: lurpdaderp
-LANG: JAVA
-TASK: herding
-*/
+import java.io.*;
+import java.util.*;
+class Main {
+	public static void main(String[] args) throws IOException {
+		Scanner sc = new Scanner(new File("herding.in"));
+		PrintWriter out = new PrintWriter(new File("herding.out"));
+		int[] cows = new int[3];
+		cows[0] = sc.nextInt();
+		cows[1] = sc.nextInt();
+		cows[2] = sc.nextInt();
+		Arrays.sort(cows);
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Arrays;
+		if (cows[2] == cows[0] + 2) {
+			out.println(0);
+		} else if (cows[1] == cows[0] + 2 || cows[2] == cows[1] + 2) {
+			out.println(1);
+		} else {
+			out.println(2);
+		}
 
-public class herding {
-    public static void main(String[] args) throws IOException {
-        BufferedReader f = new BufferedReader(new FileReader("herding.in"));
-        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("herding.out")));
-
-        String[] line = f.readLine().split(" ");
-        f.close();
-        
-        int cow1 = Integer.parseInt(line[0]);
-        int cow2 = Integer.parseInt(line[1]);
-        int cow3 = Integer.parseInt(line[2]);
-
-        int[] cows = new int[] {cow1, cow2, cow3};
-
-        Arrays.sort(cows);
-
-        int maxGap = Math.max(cows[1]-cows[0], cows[2]-cows[1]);
-        int minGap = Math.min(cows[1]-cows[0], cows[2]-cows[1]);
-
-        out.println((minGap-1) + "\n" + (maxGap-1));
-        out.close();
-    }
+		out.println(Math.max((cows[1] - cows[0]), (cows[2] - cows[1])) - 1);
+		out.close();
+	}
 }
