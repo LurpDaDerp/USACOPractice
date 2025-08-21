@@ -1,15 +1,15 @@
-import java.util.*;
+import java.io.*;
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+public class cowtip {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("cowtip.in"));
+        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("cowtip.out")));
 
-        int N = sc.nextInt();
-        sc.nextLine();
-
+        int N = Integer.parseInt(br.readLine());
         int[][] grid = new int[N][N];
+
         for (int i = 0; i < N; i++) {
-            String row = sc.nextLine();
+            String row = br.readLine();
             for (int j = 0; j < N; j++) {
                 grid[i][j] = row.charAt(j) - '0';
             }
@@ -30,6 +30,9 @@ public class Main {
             }
         }
 
-        System.out.println(operations);
+        pw.println(operations);
+
+        pw.close();
+        br.close();
     }
 }
