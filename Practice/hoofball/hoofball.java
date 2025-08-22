@@ -21,6 +21,7 @@ public class hoofball {
         String[] line = f.readLine().split(" ");
 
         int[] cows = new int[N];
+        int[] passToIndex = new int[N];
         for (int i = 0; i < N; i++) {
             cows[i] = Integer.parseInt(line[i]);
         }
@@ -31,47 +32,56 @@ public class hoofball {
             out.close();
             return;
         }
+        
+        int balls = 0;
 
-        int[] distances = new int[N-1];
-
-        for (int i = 0; i < N-1; i++) {
-            distances[i] = cows[i+1] - cows[i];
+        for (int i = 0; i < N; i++) {
+            passToIndex[i] = -1;
         }
         
-        boolean increasingDistance = distances[1] >= distances[0];
-
-        int needed = 1;
-
-        int i = 0;
-        while (i < distances.length-1) {
-            
-            increasingDistance = distances[i+1] >= distances[i];
-            if (increasingDistance) {
-                while (increasingDistance && i < distances.length-1) {
-                    increasingDistance = distances[i+1] >= distances[i];
-                    if (increasingDistance == false) {
-                        if (i+1 == distances.length-1) {
-                            i++;
-                        }  else {
-                            needed++;
-                            i--;
-                        } 
-                    }
-                    i++;
-                }
+        for (int i = 0; i < N; i++) {
+            if (i == 0) {
+                passToIndex[i] = 1;
+                continue;
+            }
+            if (i == N-1) {
+                passToIndex[i] = N-2;
+                continue;
+            }
+            if (Math.abs(cows[i] - cows[i-1]) <= Math.abs(cows[i] - cows[i+1])) {
+                passToIndex[i] = i-1;
             } else {
-                while (!increasingDistance && i < distances.length-1) {
-                    increasingDistance = distances[i+1] > distances[i];
-                    if (increasingDistance == true) {
-                        needed++;
-                        i++;
-                    }
-                    i++;
-                }
+                passToIndex[i] = i+1;
             }
         }
 
-        out.println(needed);
+        for (int i = 0; i < N; i++) {
+            boolean cowPassedTo = false;
+            for (int j = 0; j < N; j++) {
+                if (passToIndex[j] == i) {
+                    cowPassedTo = true;
+                    break;
+                }
+            }
+            if (!cowPassedTo) balls++;
+
+            int j = passToIndex[i];
+            int recievedI = 0;
+            int recievedJ = 0;
+            for (int k = 0; k < N; k++) {
+                if (passToIndex[k] == i) {
+                    recievedI++;
+                }
+                if (passToIndex[k] == j) {
+                    recievedJ++;
+                }
+            }
+            if (i < j && passToIndex[j] == i && recievedI == 1 && recievedJ == 1) {
+                balls++;
+            }
+        }
+
+        out.println(balls);
         out.close();
     }
 }
