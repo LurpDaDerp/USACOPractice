@@ -20,7 +20,7 @@ public class Main {
 
             map.put(value, i);
         }
-
+        
         System.out.println("IMPOSSIBLE");
     }
 }
