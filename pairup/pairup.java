@@ -14,31 +14,28 @@ public class pairup {
 
         final int N = Integer.parseInt(f.readLine());
 
-        int[][] cowOutputs = new int[N][2];
+        long[][] cowOutputs = new long[N][2]; 
 
         for (int i = 0; i < N; i++) {
             String[] line = f.readLine().split(" ");
-            cowOutputs[i][0] = Integer.parseInt(line[0]);
-            cowOutputs[i][1] = Integer.parseInt(line[1]);
+            cowOutputs[i][0] = Long.parseLong(line[0]); 
+            cowOutputs[i][1] = Long.parseLong(line[1]); 
         }
 
-        Arrays.sort(cowOutputs, (a, b) -> Integer.compare(a[1], b[1]));
+        Arrays.sort(cowOutputs, (a, b) -> Long.compare(a[1], b[1]));
 
-        int maxSum = 0;
+        long maxSum = 0;
 
         int start = 0;
-        int end = N-1;
-        for (int i = 0; i < N; i++) {
+        int end = N - 1;
+        while (start <= end) {
             maxSum = Math.max(maxSum, cowOutputs[start][1] + cowOutputs[end][1]);
 
             cowOutputs[start][0]--;
             cowOutputs[end][0]--;
-            if (cowOutputs[start][0] == 0) {
-                start++;
-            }
-            if (cowOutputs[end][0] == 0) {
-                end--;
-            }
+
+            if (cowOutputs[start][0] == 0) start++;
+            if (cowOutputs[end][0] == 0) end--;
         }
 
         out.println(maxSum);
