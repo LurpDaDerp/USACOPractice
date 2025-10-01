@@ -41,6 +41,13 @@ public class herding {
         int index = 0;
 
         int maxFilled = 0;
+        if ((inputCows[N-2] - inputCows[0] == N - 2 && inputCows[N-1] - inputCows[N-2] > 2) || (inputCows[N-1] - inputCows[1] == N - 2 && inputCows[1] - inputCows[0] > 2)) {
+            minMoves = 2;
+            out.println(minMoves);
+            out.println(maxMoves);
+            out.close();
+            return;
+        }
 
         for (int i = 0; i < N; i++) {
             index = i;
