@@ -38,7 +38,7 @@ public class diamond {
         int maxLength = 0;
         
         for (int i = 0; i < N; i++) {
-            for (int j = maxPerDiamond[i][1]; j < N; j++) {
+            for (int j = maxPerDiamond[i][1]+1; j < N-1; j++) {
                 maxLength = Math.max(maxPerDiamond[i][0] + maxPerDiamond[j][0], maxLength);
             }
         }
