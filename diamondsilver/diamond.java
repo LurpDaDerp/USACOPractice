@@ -23,22 +23,24 @@ public class diamond {
         }
         Arrays.sort(diamonds);
 
-        int start = 0;
+        int[][] maxPerDiamond = new int[N][2];
+
+        for (int i = 0; i < N; i++) {
+            maxPerDiamond[i][0] = 0;
+            int j = i;
+            while (j < N && diamonds[j] - diamonds[i] <= K) {
+                maxPerDiamond[i][0]++;
+                j++;
+            }
+            maxPerDiamond[i][1] = j-1;
+        }
+
         int maxLength = 0;
-
-        for (int end = 0; end < N; end++) {
-            while (diamonds[end] - diamonds[start] > K) {
-                start++;
+        
+        for (int i = 0; i < N; i++) {
+            for (int j = maxPerDiamond[i][1]; j < N; j++) {
+                maxLength = Math.max(maxPerDiamond[i][0] + maxPerDiamond[j][0], maxLength);
             }
-
-            int start2 = end;
-            for (int end2 = end; end2 < N; end2++) {
-                while (diamonds[end2] - diamonds[start2] > K) {
-                    start2++;
-                }
-                maxLength = Math.max(maxLength, end - start + 1 + end2 - start2 + 1);
-            }
-
         }
 
         out.println(maxLength);
