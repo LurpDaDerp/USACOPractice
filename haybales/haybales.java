@@ -42,8 +42,6 @@ public class haybales {
                 query2 = -1 * query2 - 2;
             } 
 
-            System.out.println(query1 + " " + query2);
-
             out.println(query2 - query1 + 1);
         }
         out.close();
